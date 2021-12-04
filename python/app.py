@@ -12,7 +12,7 @@ def addition():
   content = request.json
   [operand_one, operand_two] = [float(content['operandOne']), float(content['operandTwo'])]
   print(f"Calculating {operand_one} + {operand_two}", flush=True)
-  out = jsonify(math.ceil((operand_one + operand_two) * 100000)/100000)
+  out = jsonify({"result": math.ceil((operand_one + operand_two) * 100000)/100000})
   
   return out
 
