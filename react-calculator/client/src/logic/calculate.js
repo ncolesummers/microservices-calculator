@@ -3,12 +3,6 @@ import Big from "big.js";
 import operate from "./operate";
 import isNumber from "./isNumber";
 
-export type calcData = {
-  total: string
-  next: string
-  operation: string
-}
-
 /**
  * Given a button name and a calculator data object, return an updated
  * calculator data object.
@@ -18,7 +12,7 @@ export type calcData = {
  *   next:String       the next number to be operated on with the total
  *   operation:String  +, -, etc.
  */
-export default async function calculate(obj: calcData, buttonName: string) {
+export default async function calculate(obj, buttonName) {
   if (buttonName === "AC") {
     return {
       total: null,
@@ -27,7 +21,7 @@ export default async function calculate(obj: calcData, buttonName: string) {
     };
   }
 
-  if (isNumber(parseInt(buttonName))) {
+  if (isNumber(buttonName)) {
     if (buttonName === "0" && obj.next === "0") {
       return {};
     }
@@ -58,7 +52,7 @@ export default async function calculate(obj: calcData, buttonName: string) {
 
   if (buttonName === "%") {
     if (obj.operation && obj.next) {
-      const result = await operate(obj.total, obj.next, obj.operation);
+      let result = await operate(obj.total, obj.next, obj.operation);
       return {
         total: Big(result)
           .div(Big("100"))
