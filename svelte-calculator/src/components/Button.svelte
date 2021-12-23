@@ -1,0 +1,48 @@
+<script>
+export let name
+export let orange = ""
+export let wide = ""
+export const className = [
+  "component-button",
+  orange,
+  wide,
+]
+
+function handleClick() {
+  return name
+}
+
+</script> 
+<div class={className.join(" ").trim()}>
+  <button on:click={handleClick}>{name}</button>
+</div>
+
+<style>
+.component-button {
+  display: inline-flex;
+  width: 25%;
+  flex: 1 0 auto;
+}
+
+.component-button.wide {
+  width: 50%;
+}
+
+.component-button button {
+  background-color: #e0e0e0;
+  border: 0;
+  font-size: 1.5rem;
+  margin: 0 1px 0 0;
+  flex: 1 0 auto;
+  padding: 0;
+}
+
+.component-button:last-child button {
+  margin-right: 0;
+}
+
+.component-button.orange button {
+  background-color: #f5923e;
+  color: white;
+}
+</style>
