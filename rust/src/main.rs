@@ -1,20 +1,27 @@
 #[macro_use] extern crate rocket;
-use rocket::serde::{Serialize, Deserialize, json};
+use rocket::serde::{Serialize, Deserialize, json::Json};
 
-#[derive(Serialize, Deserialize)]
+#[derive(Deserialize)]
 #[serde(crate = "rocket::serde")]
 struct Operands {
-    operandOne: f64,
-    operandTwo: f64
+    operand_one: f64,
+    operand_two: f64
 }
 
-#[post("/exponent", format = "json" data = "operands")]
+#[derive(Serialize)]
+#[serde(crate = "rocket::serde")]
+struct Done {
+    result: f64
+}
+
+#[post("/exponent", format = "json", data = "<operands>")]
 //TODO finish exponent
-fn exponent(Operands) ->  json {
-    "Hello, world!"
+fn exponent(operands: Json<Operands>) ->  Json<Done> {
+    let done = Done{ result: f64::powf(operands.operand_one, operands.operand_two) };
+    Json(done)
 }
 
 #[launch]
 fn rocket() -> _ {
-    rocket::build().mount("/", routes![index])
+    rocket::build().mount("/", routes![exponent])
 }
