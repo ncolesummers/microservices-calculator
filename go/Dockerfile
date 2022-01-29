@@ -8,4 +8,5 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o multiply .
 FROM debian:buster-slim
 WORKDIR /root/
 COPY --from=builder /dir/multiply .
+EXPOSE 7286
 CMD ["./multiply"]

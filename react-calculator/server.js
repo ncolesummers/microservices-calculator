@@ -38,6 +38,11 @@ app.post('/calculate/divide', async (req, res) => {
   req.pipe(request(divideUrl)).pipe(res);
 });
 
+app.post('/calculate/exponent', async (req, res) => {
+  const exponentUrl = `${daprUrl}/exponentapp/method/exponent`;
+  req.pipe(request(exponentUrl)).pipe(res);
+});
+
 // Forward state retrieval to Dapr state endpoint
 app.get('/state', async (req, res) => req.pipe(request(`${stateUrl}/calculatorState`)).pipe(res));
 

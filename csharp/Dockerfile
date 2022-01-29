@@ -4,4 +4,5 @@
 FROM mcr.microsoft.com/dotnet/aspnet:3.1
 WORKDIR /app
 COPY  /out .
-ENTRYPOINT ["dotnet", "Divide.dll"]
+EXPOSE 8888-8889
+ENTRYPOINT ["dotnet", "csharp.dll"]
