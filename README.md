@@ -76,7 +76,22 @@ cargo build --release
 dapr run --app-id exponentapp --app-port 8008 --dapr-http-port 3505 ./target/release/rust
 ```
 
-[![Postman Tests](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/8071108-278e03d1-bb5f-42c3-9728-3251fece7e0c?action=collection%2Ffork&collection-url=entityId%3D8071108-278e03d1-bb5f-42c3-9728-3251fece7e0c%26entityType%3Dcollection%26workspaceId%3Dae9a77b0-1281-478f-b464-9be1483b04f3)
-
 ### Frontend Calculator app - navigate to the react-calculator directory and follow the steps below
 
+* Install the required modules
+
+```shell
+npm install
+npm run buildclient
+```
+
+* Start Dapr using the command below
+
+```shell
+dapr run --app-id frontendapp --app-port 8080 --dapr-http-port 3500 node server.js
+```
+
+
+Lastly, open a browser window and go to http://localhost:8080/.  
+
+[![Postman Tests](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/8071108-278e03d1-bb5f-42c3-9728-3251fece7e0c?action=collection%2Ffork&collection-url=entityId%3D8071108-278e03d1-bb5f-42c3-9728-3251fece7e0c%26entityType%3Dcollection%26workspaceId%3Dae9a77b0-1281-478f-b464-9be1483b04f3)
