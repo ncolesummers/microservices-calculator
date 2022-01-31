@@ -2,7 +2,7 @@
 
 A microservices example using Dapr
 
-This project uses Dapr to create a distributed calculator. The services are written in multiple languages including Go, Python, TS/JS, and C#.  Frameworks used include Deno, Gorilla/mux, Flask, .NET, and React.
+This project uses the Dapr runtime to create a distributed calculator. The services are written in multiple languages including Go, Python, TS/JS, and C#.  Frameworks used include Deno, Gorilla/mux, Flask, .NET, Rocket and React.
 
 ## Run Locally
 
@@ -17,7 +17,7 @@ pip3 install wheel python-dotenv flask_cors flask
 * Run dapr using the command:
   
 ```shell
-dapr run --app-id addapp --app-port 5000 --dapr-http-port 3501 flask run
+dapr run --app-id addapp --app-port 5555 --dapr-http-port 3501 flask run
 ```
 
 ### Subtraction - Navigate to the deno directory and follow the steps below

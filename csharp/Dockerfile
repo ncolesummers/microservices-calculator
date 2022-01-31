@@ -1,8 +1,12 @@
-# Note: we cannot do a staged dotnet docker build here for arm/arm64. 
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /src
+COPY csharp.csproj .
+RUN dotnet restore
+COPY . .
+RUN dotnet publish -c release -o /app
 
-# Build runtime image
-FROM mcr.microsoft.com/dotnet/aspnet:3.1
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
-COPY  /out .
+COPY --from=build /app .
 EXPOSE 8888-8889
 ENTRYPOINT ["dotnet", "csharp.dll"]

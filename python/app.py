@@ -2,7 +2,6 @@ import flask
 from flask import request, jsonify
 from flask_cors import CORS
 import math
-import sys
 
 app = flask.Flask(__name__)
 CORS(app)
@@ -16,4 +15,4 @@ def addition():
   
   return out
 
-app.run()
+app.run(host="0.0.0.0")
