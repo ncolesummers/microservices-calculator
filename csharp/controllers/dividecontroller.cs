@@ -24,7 +24,8 @@ namespace Divide.Controllers
         result = Decimal.Parse(operands.OperandOne) / Decimal.Parse(operands.OperandTwo)
         
       };
-      string jsonString = JsonSerializer.Serialize(compute);
+      JsonSerializerOptions options = new() { WriteIndented = true };
+      string jsonString = JsonSerializer.Serialize(compute, options);
       return jsonString;
     }
   }
