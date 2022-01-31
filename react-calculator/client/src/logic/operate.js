@@ -26,7 +26,7 @@ export default async function operate(operandOne, operandTwo, operationSymbol) {
     }),
   });
   const response = await rawResponse.json();
-  console.log(response)
-  console.log(response.result)
-  return response.result
+  let result = JSON.parse(response)
+
+  return result.result
 }
