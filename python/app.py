@@ -6,8 +6,8 @@ import math
 app = flask.Flask(__name__)
 CORS(app)
 
-@app.route('/addition', methods=['POST'])
-def addition():
+@app.route('/add', methods=['POST'])
+def add():
   content = request.json
   [operand_one, operand_two] = [float(content['operandOne']), float(content['operandTwo'])]
   print(f"Calculating {operand_one} + {operand_two}", flush=True)

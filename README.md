@@ -17,7 +17,7 @@ pip3 install wheel python-dotenv flask_cors flask
 * Run dapr using the command:
   
 ```shell
-dapr run --app-id addapp --app-port 5555 --dapr-http-port 3501 flask run
+dapr run --app-id addapp --app-port 5555 --dapr-http-port 3501 -- flask run
 ```
 
 ### Subtraction - Navigate to the deno directory and follow the steps below
@@ -25,7 +25,7 @@ dapr run --app-id addapp --app-port 5555 --dapr-http-port 3501 flask run
 * Run dapr using the command:
 
 ```shell
-dapr run --app-id subtractapp --app-port 1447 --dapr-http-port 3502 deno run --allow-net app.ts
+dapr run --app-id subtractapp --app-port 1447 --dapr-http-port 3502 -- deno run --allow-net app.ts
 ```
 
 ### Multiply - Navigate to the go directory and follow the steps below
@@ -45,7 +45,7 @@ go build multiply.go
 * Run dapr using the command:
 
 ```shell
-dapr run --app-id multiplyapp --app-port 7286 --dapr-http-port 3503 ./multiply
+dapr run --app-id multiplyapp --app-port 7286 --dapr-http-port 3503 -- ./multiply
 ```
 
 ### Divide - Navigate to the csharp directory and follow the steps below
@@ -56,10 +56,10 @@ dapr run --app-id multiplyapp --app-port 7286 --dapr-http-port 3503 ./multiply
 dotnet build
 ```
 
-* Navigate to ./bin/Debug/net6.0 and start Dapr using the following command:
+* Start Dapr using the following command:
 
 ```shell
-dapr run --app-id divideapp --app-port 8889 --dapr-http-port 3504 dotnet csharp.dll
+dapr run --app-id divideapp --app-port 8889 --dapr-http-port 3509 -- dotnet bin/Debug/net6.0/csharp.dll
 ```
 
 ### POW - Navigate to the rust directory and follow the steps below
@@ -73,7 +73,7 @@ cargo build --release
 * Start dapr using the command:
 
 ```shell
-dapr run --app-id exponentapp --app-port 8008 --dapr-http-port 3505 ./target/release/rust
+dapr run --app-id exponentapp --app-port 8008 --dapr-http-port 3505 -- ./target/release/rust
 ```
 
 ### Frontend Calculator app - navigate to the react-calculator directory and follow the steps below
@@ -88,7 +88,7 @@ npm run buildclient
 * Start Dapr using the command below
 
 ```shell
-dapr run --app-id frontendapp --app-port 8080 --dapr-http-port 3500 node server.js
+dapr run --app-id frontendapp --app-port 8080 --dapr-http-port 3500 -- node server.js
 ```
 
 

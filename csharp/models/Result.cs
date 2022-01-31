@@ -1,7 +1,7 @@
-    namespace Divide.Models {
-    public class Compute {
-      public decimal Result { get; set;}
-    }
+namespace Divide.Models {
+  public class Compute {
+    public decimal result { get; set;}
+  }
 
-    }
+}
     

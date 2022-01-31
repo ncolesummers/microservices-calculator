@@ -2,7 +2,7 @@ import { Drash } from "./deps.ts"
 
 // Create your resource
 class HomeResource extends Drash.Resource {
-  public paths = ["/subtraction"];
+  public paths = ["/subtract"];
 
   public POST(request: Drash.Request, response: Drash.Response): void {
     
@@ -16,7 +16,7 @@ class HomeResource extends Drash.Resource {
       );
     } 
     const result = parseInt(numOne) - parseInt(numTwo)
-
+    console.log(`Subtracted ${numOne} from ${numTwo} and got result: ${result}`)
 
     return response.json({
       result: result

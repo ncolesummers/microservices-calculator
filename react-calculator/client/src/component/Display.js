@@ -5,7 +5,7 @@ import "./Display.css";
 
 export default class Display extends React.Component {
   static propTypes = {
-    value: PropTypes.string,
+    value: PropTypes.number,
   };
 
   render() {

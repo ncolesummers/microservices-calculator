@@ -21,7 +21,8 @@ namespace Divide.Controllers
       Console.WriteLine($"Dividing {operands.OperandTwo} from {operands.OperandOne}");
       Compute compute = new Compute
       {
-        Result = Decimal.Parse(operands.OperandOne) / Decimal.Parse(operands.OperandTwo)
+        result = Decimal.Parse(operands.OperandOne) / Decimal.Parse(operands.OperandTwo)
+        
       };
       string jsonString = JsonSerializer.Serialize(compute);
       return jsonString;
