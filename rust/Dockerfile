@@ -1,10 +1,10 @@
-FROM rust:latest as builder
+FROM rust:1.58-buster as builder
 WORKDIR /usr/src/rust
 COPY . .
 RUN cargo install --path .
 
-FROM debian:buster-slim
-RUN apt-get update && apt-get install -y extra-runtime-dependencies && rm -rf /var/lib/apt/lists/*
+FROM rust:1.58-slim-buster
+ENV ROCKET_PORT=8008
 COPY --from=builder /usr/local/cargo/bin/rust /usr/local/bin/rust
 EXPOSE 8008
 CMD ["rust"]
