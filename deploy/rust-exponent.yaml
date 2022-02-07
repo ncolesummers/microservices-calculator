@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: exponentapp
+  labels:
+    app: exponent
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: exponent
+  template:
+    metadata:
+      labels:
+        app: exponent
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "exponentapp"
+        dapr.io/app-port: "8008"
+        dapr.io/config: "appconfig"
+    spec:
+      containers:
+      - name: exponent
+        image: ncolesummers72/distributed-calculator-rust:latest
+        ports:
+        - containerPort: 8008
+        imagePullPolicy: Always
