@@ -1,7 +1,7 @@
-FROM denoland/deno:1.10.3
+FROM denoland/deno:1.18.2
 
 # The port that your application listens to.
-EXPOSE 1443
+EXPOSE 1447
 
 WORKDIR /app
 
@@ -16,6 +16,6 @@ RUN deno cache deps.ts
 # These steps will be re-run upon each file change in your working directory:
 ADD . .
 # Compile the main app so that it doesn't need to be compiled each startup/entry.
-RUN deno cache main.ts
+RUN deno cache app.ts
 
 CMD ["run", "--allow-net", "app.ts"]
