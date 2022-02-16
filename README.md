@@ -4,6 +4,15 @@ A microservices example using Dapr
 
 This project uses the Dapr runtime to create a distributed calculator. The services are written in multiple languages including Go, Python, TS/JS, and C#.  Frameworks used include Deno, Gorilla/mux, Flask, .NET, Rocket and React.
 
+```mermaid
+flowchart TD
+  A{React Frontend} -- Addition --> B[Flask];
+  A{React Frontend} -- Subtraction --> C[Deno];
+  A{React Frontend} -- Multiplication --> D[Gorilla/mux];
+  A{React Frontend} -- Division --> E[ASP.NET];
+  A{React Frontend} -- POW --> F[Rocket.rs];
+```
+
 ## Run Locally
 
 ### Addition - Navigate to the python directory and follow the steps below
