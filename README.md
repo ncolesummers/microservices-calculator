@@ -6,7 +6,7 @@ This project uses the Dapr runtime to create a distributed calculator. The servi
 
 ```mermaid
 flowchart TD
-  A{React Frontend} -- Addition --> B[Flask] -> C[Wasmer wasm module];
+  A{React Frontend} -- Addition --> B[Flask] --> C[Wasmer wasm module];
   A{React Frontend} -- Subtraction --> D[Deno];
   A{React Frontend} -- Multiplication --> E[Gorilla/mux];
   A{React Frontend} -- Division --> F[ASP.NET];
