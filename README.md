@@ -20,7 +20,7 @@ flowchart TD
 * Install required packages:
   
 ```shell
-pip3 install wheel python-dotenv flask_cors flask
+pip3 install wheel python-dotenv flask_cors flask wasmer wasmer_compiler_cranelift
 ```
 
 * Run dapr using the command:
